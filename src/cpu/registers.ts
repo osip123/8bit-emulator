@@ -12,7 +12,7 @@ export enum registersCode {
 
 }
 
-class register {
+export class register {
 
     public type:registersCode;
     public arrd: number;
@@ -51,3 +51,10 @@ function createRegisters(addrs: IArrdReg[]): register[]{
 
     return registers;
 }
+
+export default class registerOperator{
+    registers: register[] = [];
+
+    constructor(registers: register[]){ this.registers = registers; }
+
+};
