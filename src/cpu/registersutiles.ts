@@ -1,6 +1,6 @@
 import { register } from "./registers";
 
-export function getRegisterValue(addr: number, regList: register[]) {
+export function getRegisterValue(addr: number, regList: register[]): string {
     switch(addr) {
         case 0x01:
             return regList[0].read();
@@ -20,17 +20,22 @@ export function getRegisterValue(addr: number, regList: register[]) {
 }
 
 export default function getRegisterIndex(addr: number): number {
-    const index = 0;
-
-    for(let i = 0; i < regiderAdresses.length; i++) {
-        if(regiderAdresses[i].addr === addr) {
-            return regiderAdresses[i].idnex;
-        }
-        else{
-            throw new Error("Address not found");
-        }
+    switch(addr) {
+        case 0x01:
+            return  0
+        case 0x02:
+            return 1
+        case 0x03:
+            return 2
+        case 0x04:
+            return 3
+        case 0x05:
+            return 4
+        case 0x06:
+            return 5
+        case 0x07:
+            return 6
     }
-
 }
 
 export const regiderAdresses: registerValue[] = [
