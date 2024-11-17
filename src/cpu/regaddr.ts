@@ -8,30 +8,30 @@ export interface IArrdReg {
 export const regarrds:IArrdReg[] = [
     {
         type: registersCode.A,
-        addr: 0x001
+        addr: 0x01
     },
     {
         type: registersCode.B,
-        addr: 0x002
+        addr: 0x02
     },
     {
         type: registersCode.C,
-        addr: 0x003
+        addr: 0x03
     },    
     {
         type: registersCode.D,
-        addr: 0x004
+        addr: 0x04
     },    
     {
         type: registersCode.E,
-        addr: 0x005
+        addr: 0x05
     },
     {
         type: registersCode.H,
-        addr: 0x006
+        addr: 0x06
     },
     {
         type: registersCode.L,
-        addr: 0x007
+        addr: 0x07
     },
 ]

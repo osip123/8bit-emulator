@@ -1,4 +1,3 @@
-import { IArrd } from "../memory/Adrr";
 import { IArrdReg } from "./regaddr";
 
 export enum registersCode {
@@ -41,7 +40,7 @@ export class register {
     }
 }
 
-function createRegisters(addrs: IArrdReg[]): register[]{
+export function createRegisters(addrs: IArrdReg[]): register[]{
     let registers: register[] = [];
 
     for (let i = 0; i < addrs.length; i++) {
