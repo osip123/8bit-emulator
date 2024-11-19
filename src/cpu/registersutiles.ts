@@ -1,22 +1,23 @@
 import { register } from "./registers";
 
 export function getRegisterValue(addr: number, regList: register[]): string {
-    switch(addr) {
-        case 0x01:
-            return regList[0].read();
-        case 0x02:
-            return regList[1].read();
-        case 0x03:
-            return regList[2].read();
-        case 0x04:
-            return regList[3].read();
-        case 0x05:
-            return regList[4].read();
-        case 0x06:
-            return regList[5].read();
-        case 0x07:
-            return regList[6].read();
-    }
+    // switch(addr) {
+    //     case 0x01:
+    //         return regList[0].read();
+    //     case 0x02:
+    //         return regList[1].read();
+    //     case 0x03:
+    //         return regList[2].read();
+    //     case 0x04:
+    //         return regList[3].read();
+    //     case 0x05:
+    //         return regList[4].read();
+    //     case 0x06:
+    //         return regList[5].read();
+    //     case 0x07:
+    //         return regList[6].read();
+    // }
+    return regList[getRegisterIndex(addr)].read();
 }
 
 export default function getRegisterIndex(addr: number): number {
