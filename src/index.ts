@@ -1,15 +1,13 @@
 import * as _ from 'lodash';
 import { createRegisters, register } from './cpu/registers';
 import { regarrds } from './cpu/regaddr';
-import { PUSH } from './instrucrion/instProgramCounterStackControl';
-import getRegisterIndex, { getRegisterValue } from './cpu/registersutiles';
+import CPU from './cpu/cpu';
 
 function main() {
     let registers: register[] = createRegisters(regarrds);
-    PUSH(0x04, registers, "00");
-    let value:string = getRegisterValue(0x04, registers);
-    console.log(registers[getRegisterIndex(0x04)]);
-    console.log(value);
+    let cpu = new CPU(registers)
+    cpu.execute(["00001", "0x04", "010011"]);
+    console.log(cpu.registers);
 }
 
 main();

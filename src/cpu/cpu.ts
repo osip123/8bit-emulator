@@ -1,4 +1,6 @@
+import { toInteger } from 'lodash';
 import { register, createRegisters, registersCode } from './registers';
+import { PUSH } from '../instrucrion/instProgramCounterStackControl';
 
 
 export default class CPU {
@@ -40,5 +42,10 @@ export default class CPU {
 
     }
 
-    public execute() {  }
+    public execute(cmd: string[]) { 
+        if(cmd[0] === "00001") {
+            let addr = toInteger(cmd[1]);
+            PUSH(addr, this.registers, cmd[2]);
+        }
+    }
 }
