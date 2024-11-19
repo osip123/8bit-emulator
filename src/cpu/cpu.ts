@@ -39,7 +39,14 @@ export default class CPU {
     }
 
     private decode(cmd: string) {
-
+        switch(cmd) {
+            case "00001":
+                this.cmds 
+                break;
+            default:
+                break;
+                
+        }
     }
 
     public execute(cmd: string[]) { 
