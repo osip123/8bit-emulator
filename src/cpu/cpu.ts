@@ -41,10 +41,10 @@ export default class CPU {
 
     private decode(cmd: string): string {
         switch(cmd) {
-            case "00001":
+            case "0001":
                 return "PUSH";
                 break;
-            case "0001":
+            case "0011":
                 return "XOR";
             default:
                 break;
@@ -53,18 +53,19 @@ export default class CPU {
     }
 
     public execute(cmd: string[]) { 
-        // this.current_cmd = this.decode(getRegisterValue(toInteger(cmd[0]), this.registers));
-        this.current_cmd = this.decode(this.registers[0].read());
-        console.log(typeof this.current_cmd);
-        console.log(this.current_cmd);
-
+        console.log(this.registers[1].read());
+        let decoded_cmd = this.decode(this.registers[1].read())
+        console.log(decoded_cmd);
+        this.run(decoded_cmd, cmd);
     }
 
-    public run(cmd: string[]) {
-        switch(this.current_cmd){
+    public run(dc: string, cmd: string[]) {
+        switch(dc){
             case "PUSH":
                 let addr = toInteger(cmd[1]);
+                console.log(addr);
                 PUSH(addr, this.registers, cmd[2]);
+                break
         }
     }
 }

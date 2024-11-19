@@ -14,7 +14,7 @@ export class register {
 
     public type:registersCode;
     public arrd: number;
-    public buffer:string | null;
+    private buffer:string | null;
 
     constructor(type:registersCode, addr:number) {
         this.type = type;
