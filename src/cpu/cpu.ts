@@ -48,4 +48,6 @@ export default class CPU {
             PUSH(addr, this.registers, cmd[2]);
         }
     }
+
+    public run() {}
 }
