@@ -8,7 +8,6 @@ export enum registersCode {
     E,	//8 bit	GP
     H,	//8 bit	High-order word
     L,	//8 bit	Low-order word
-
 }
 
 export class register {
