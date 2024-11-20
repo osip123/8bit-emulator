@@ -2,11 +2,13 @@ import { toInteger } from 'lodash';
 import { register, createRegisters, registersCode } from './registers';
 import { PUSH } from '../instrucrion/instProgramCounterStackControl';
 import { getRegisterValue } from './registersutiles';
+import Decoder from '../decoder/decoder';
 
 
 export default class CPU {
     private current_cmd: string;
     private cmds: string[];
+    private decoder = new Decoder();
     public registers: register[]
 
     constructor(registes: register[]) {
@@ -39,24 +41,13 @@ export default class CPU {
         }
     }
 
-    private decode(cmd: string): string {
-        switch(cmd) {
-            case "0001":
-                return "PUSH";
-                break;
-            case "0011":
-                return "XOR";
-            default:
-                break;
-                
-        }
-    }
-
     public execute(cmd: string[]) { 
         console.log(this.registers[1].read());
-        let decoded_cmd = this.decode(this.registers[1].read())
-        console.log(decoded_cmd);
-        this.run(decoded_cmd, cmd);
+        let decoded_cmd1 = this.decoder.decode(this.registers[5].read());
+        let decoded_cmd2 = this.decoder.decode(this.registers[6].read());
+
+        console.log(decoded_cmd1);
+        console.log(decoded_cmd2);
     }
 
     public run(dc: string, cmd: string[]) {
