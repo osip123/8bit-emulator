@@ -1,9 +1,17 @@
 import * as _ from 'lodash';
 import ASMParser from './core/parser';
+import ASMCompiler from './compiller/compiller';
 
 function main() {
-    const parser = new ASMParser("XOR 0x01 0x02 PUSH 0x01 1002");
-    parser.parse();
+    const parser = new ASMParser("PUSH");
+    const AST = parser.parse();
+    if(!AST) {
+        console.log("Error");
+        return;
+    }
+    const compiller = new ASMCompiler(AST);
+    console.log(compiller.compile());
+    
 }
 
 main();

@@ -1,21 +1,24 @@
+import { times } from "lodash";
 
 export default class ASMParser {
 
-    ASMcode: string;
-    AST: string[] | null;
+    private ASMcode: string;
+    private opCode: string[];
+    private AST: string[]
 
     constructor(ASMcode: string) {
         this.ASMcode = ASMcode;
-        this.AST = null;
+        this.opCode = ["", ""];
     }
 
     private runParser() {
-        this.AST = this.ASMcode.split(" ");
-        console.log(this.AST);
+        this.opCode = this.ASMcode.split(" ");
     }
 
-    public parse() {
+    public parse(): string[] {
         this.runParser();
+        this.AST = this.opCode
+        return this.AST
     }
 
 }
