@@ -14,7 +14,7 @@ export default class ASMCompiler {
 
         while (i < this.AST.length){
             if(this.AST[i] === "PUSH"){
-                this.biteCode = this.biteCode + "0001" + this.AST[i+1] + this.AST[i+2];
+                this.biteCode = this.biteCode + " 0001" +" " + this.AST[i+1] + " " + this.AST[i+2];
                 i += 3;
             }
             else{

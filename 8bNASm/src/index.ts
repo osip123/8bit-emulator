@@ -3,7 +3,7 @@ import ASMParser from './core/parser';
 import ASMCompiler from './compiller/compiller';
 
 function main() {
-    const parser = new ASMParser("PUSH");
+    const parser = new ASMParser("PUSH 0x02 0101");
     const AST = parser.parse();
     if(!AST) {
         console.log("Error");
