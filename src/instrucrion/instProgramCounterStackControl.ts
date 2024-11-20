@@ -10,3 +10,14 @@ export function PUSH(addr: number, registers: register[], value: string): void {
     registers[index].init();
     registers[index].write(value);
 }
+
+export default function XOR(addr1: number, addr2: number , registers: register[]): number {
+    const index1  = getRegisterIndex(addr1)
+    const index2 = getRegisterIndex(addr2)
+
+    if(registers[index1].read() < registers[index2].read()){
+        return registers[index1].arrd
+    }
+    else return registers[index2].arrd
+}
+
