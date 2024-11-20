@@ -17,8 +17,13 @@ export default class ASMCompiler {
                 this.biteCode = this.biteCode + " 0001" +" " + this.AST[i+1] + " " + this.AST[i+2];
                 i += 3;
             }
-            else{
-                return "null";
+            else if(this.AST[i] === "ADD"){
+                this.biteCode = this.biteCode + " 0010" +" " + this.AST[i+1] + " " + this.AST[i+2];
+                i += 3;
+            }
+            else if(this.AST[i] === "XOR"){
+                this.biteCode = this.biteCode + " 0011" +" " + this.AST[i+1] + " " + this.AST[i+2];
+                i += 3;
             }
         }
 
