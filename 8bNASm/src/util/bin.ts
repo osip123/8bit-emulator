@@ -1,4 +1,6 @@
+import { toInteger } from "lodash"
 
 export default function bin(dec: string) {
-    return Number(dec).toString(2)
+    const bn = toInteger(dec).toString()
+    return Number(bn).toString(2)
 }

@@ -23,7 +23,7 @@ export default class ASMCompiler {
                 i += 3;
             }
             else if(this.AST[i] === "XOR"){
-                this.biteCode = this.biteCode + " 0011" +" " + bin(this.AST[i+1]) + " " + (this.AST[i+2]);
+                this.biteCode = this.biteCode + " 0011" +" " + bin(this.AST[i+1]) + " " + bin(this.AST[i+2]);
                 i += 3;
             }
         }
