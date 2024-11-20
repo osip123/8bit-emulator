@@ -8,7 +8,7 @@ export default class ASMParser {
 
     constructor(ASMcode: string) {
         this.ASMcode = ASMcode;
-        this.opCode = ["", ""];
+        this.opCode = [];
     }
 
     private runParser() {
