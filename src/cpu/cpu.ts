@@ -1,6 +1,7 @@
 import { toInteger } from 'lodash';
 import { register } from './registers';
 import Decoder from '../decoder/decoder';
+import { CCL } from './types/cpuCC';
 
 export default class Cpu {
 
@@ -13,13 +14,12 @@ export default class Cpu {
         this.cmds = [];
     }
 
-    private  execute(){
+    private registersRewrite(ccl: CCL){}
 
-    }
+    private execute(){}
 
+    private getNextCmd(cmds: string[]){}
 
-    public run(){
-    
-    }
+    public run(){ this.execute(); }
 
 }
