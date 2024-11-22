@@ -1,5 +1,6 @@
 import b8ADD from '../lib/ADD';
 import b8BPUSH from '../lib/PUSH';
+import b8XOR from '../lib/XOR';
 import bin from '../util/bin';
 
 export default class ASMCompiler {
@@ -25,7 +26,7 @@ export default class ASMCompiler {
                 i += 3;
             }
             else if(this.AST[i] === "XOR"){
-                this.biteCode = this.biteCode + " 0011" +" " + bin(this.AST[i+1]) + " " + bin(this.AST[i+2]);
+                this.biteCode = this.biteCode + b8XOR(this.AST[i + 1], this.AST[i + 2]);
                 i += 3;
             }
         }
