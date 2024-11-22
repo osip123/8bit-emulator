@@ -19,6 +19,9 @@ export default class Cpu {
     private execute(){
         let cmd1 = this.decoder.decode(this.cmds[5]);
         let cmd2 = this.decoder.decode(this.cmds[6]);
+
+        
+
     }
 
     private getNextCmd(cmds: string[]){
