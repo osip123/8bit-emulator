@@ -41,16 +41,16 @@ export default class CPU {
         }
     }
 
-    public execute(cmd: string[]) { 
+    public execute() { 
         console.log(this.registers[1].read());
         let decoded_cmd1 = this.decoder.decode(this.registers[5].read());
         let decoded_cmd2 = this.decoder.decode(this.registers[6].read());
 
-        console.log(decoded_cmd1);
-        console.log(decoded_cmd2);
+        // console.log(decoded_cmd1);
+        // console.log(decoded_cmd2);
     }
 
-    public run(dc: string, cmd: string[]) {
+    private run(dc: string, cmd: string[]) {
         switch(dc){
             case "PUSH":
                 let addr = toInteger(cmd[1]);

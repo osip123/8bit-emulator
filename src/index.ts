@@ -12,7 +12,7 @@ function main() {
     let cpu = new CPU(registers)
 
     console.log(cpu.registers);
-    cpu.execute(["0001", "0x04", "010011"]);
+    cpu.execute();
 }
 
 main();
