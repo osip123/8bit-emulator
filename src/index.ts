@@ -6,13 +6,9 @@ import CPU from './cpu/cpu';
 function main() {
     let registers: register[] = createRegisters(regarrds);
 
-    registers[5].write("0001");
-    registers[6].write("0011");
+    // let cpu = new CPU(registers)
 
-    let cpu = new CPU(registers)
-
-    console.log(cpu.registers);
-    cpu.execute();
+    // cpu.execute();
 }
 
 main();
