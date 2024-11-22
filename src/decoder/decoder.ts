@@ -14,15 +14,3 @@ export default class Decoder {
 
 }
 
-// private decode(cmd: string): string {
-//     switch(cmd) {
-//         case "0001":
-//             return "PUSH";
-//             break;
-//         case "0011":
-//             return "XOR";
-//         default:
-//             break;
-            
-//     }
-// }
