@@ -14,11 +14,16 @@ export default class Cpu {
         this.cmds = [];
     }
 
-    private registersRewrite(ccl: CCL){}
+    private registersRewrite(ccl: CCL[]){}
 
-    private execute(){}
+    private execute(){
+        let cmd1 = this.decoder.decode(this.cmds[0]);
+        let cmd2 = this.decoder.decode(this.cmds[1]);
+    }
 
-    private getNextCmd(cmds: string[]){}
+    private getNextCmd(cmds: string[]){
+        this.cmds = cmds;
+    }
 
     public run(){ this.execute(); }
 
