@@ -19,7 +19,7 @@ export default class Cpu {
 
 
     public run(){
-
+    
     }
 
 }
